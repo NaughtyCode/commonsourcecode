@@ -1,0 +1,17 @@
+Q:
+I have a textured polygon mesh that I plan to be
+move-able based on the user's various inputs. For
+example: the user can move the vertices in various
+directions. But the number of vertices and the texture
+coordinates will always be constant.Is this a good
+situation to use GL_STATIC_DRAW, or should i use something
+else, like GL_STREAM_DRAW?
+
+A:
+No, your situation is not a good case to use GL_STATIC_DRAW.
+As h4lcOn's link suggests you should use dynamic or stream.
+Though if I understand correctly what you are trying to do
+I wouldn't even use VBO at all. There will not be much overhead (if any at all)
+if you push the coordinates every draw call for a simple polygon.
+Use a VBO in cases when you have a large quantity of polygons or when
+you make large amount of draw calls with the same vertex data in a single frame.

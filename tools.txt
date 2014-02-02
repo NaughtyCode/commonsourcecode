@@ -1,0 +1,6 @@
+memmory:
+jemalloc
+tcmalloc
+ptmalloc
+nedmaloc
+hoard

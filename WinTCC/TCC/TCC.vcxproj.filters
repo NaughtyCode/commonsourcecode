@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="code">
+      <UniqueIdentifier>{6cf26204-8b6a-405a-a951-7f6e20e09e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\include">
+      <UniqueIdentifier>{430cdd38-9cab-4160-9bb1-af3857898185}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\source">
+      <UniqueIdentifier>{19c1fb46-23a2-49de-b0b9-4f4a1847e932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\definition">
+      <UniqueIdentifier>{6fe56219-71d4-4977-8391-d0338ed8cbf1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\arm-gen.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\c67-gen.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\i386-asm.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\i386-gen.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\il-gen.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\libtcc.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\tcc.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\tccasm.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\tcccoff.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\tccelf.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\tccgen.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\tccpe.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\tccpp.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\tccrun.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\x86_64-gen.c">
+      <Filter>code\source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\coff.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\config.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\elf.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\i386-asm.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\i386-tok.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\il-opcodes.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\libtcc.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\tcc.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\stab.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\tcctok.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\x86_64-asm.h">
+      <Filter>code\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\code\stab.def">
+      <Filter>code\definition</Filter>
+    </None>
+  </ItemGroup>
+</Project>
