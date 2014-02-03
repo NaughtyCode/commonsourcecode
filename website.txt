@@ -7,9 +7,6 @@ http://www.opengl-tutorial.org/
 http://wili.cc/blog/opengl-cs.html
 http://www.geeks3d.com/20121214/voxel-cone-tracing-global-illumination-in-opengl-4-3/
 
-
-
-
 http://wili.cc/blog/opengl-cs.html
 
 

@@ -42,7 +42,6 @@ void SetSignalCallBack(){
 int main(int argc, char *argv[])
 {
 	SetSignalCallBack();
-	printf("Try to press Ctrl + C\n");
-	Sleep(-1);
+	while(true){}
 	return 0;
 }
