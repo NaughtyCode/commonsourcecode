@@ -16,6 +16,6 @@ http://en.wikibooks.org/wiki/OpenGL_Programming
 
 http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/
 
-
+http://www.kimicat.com/opencl-1/zai-windows-xia-shi-yong-opencl
 
 http://wili.cc/cv/
