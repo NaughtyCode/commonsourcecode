@@ -22,4 +22,4 @@ http://wili.cc/cv/
 
 
 FBO:
-http://www.songho.ca/opengl/gl_fbo.html
+http://www.songho.ca/opengl/index.html
