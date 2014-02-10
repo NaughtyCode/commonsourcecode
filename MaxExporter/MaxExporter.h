@@ -1,29 +1,46 @@
 #pragma once
 
-//**************************************************************************/
-// Copyright (c) 1998-2007 Autodesk, Inc.
-// All rights reserved.
-// 
-// These coded instructions, statements, and computer programs contain
-// unpublished proprietary information written by Autodesk, Inc., and are
-// protected by Federal copyright law. They may not be disclosed to third
-// parties or copied or duplicated in any form, in whole or in part, without
-// the prior written consent of Autodesk, Inc.
-//**************************************************************************/
-// DESCRIPTION: Includes for Plugins
-// AUTHOR: 
-//***************************************************************************/
 
+//include 3dmax head files
 #include "3dsmaxsdk_preinclude.h"
 #include "resource.h"
 #include <istdplug.h>
 #include <iparamb2.h>
 #include <iparamm2.h>
 #include <maxtypes.h>
-//SIMPLE TYPE
+
+#include "max.h"
+#include "UtilExp.h"
+#include "modstack.h"
+#include "stdmat.h"
+#include "iparamm2.h"
+#include "commdlg.h"
+#include "utilapi.h"
+#include "macrorec.h"
+#include "decomp.h" 
+#include "dummy.h"
+#include "assert1.h"
+#include "maxheap.h"
+#include "iFnPub.h"
+#include "ref.h"
+#include "coreexp.h"
+#include "InodeTransformModes.h"
+#include "GetCOREInterface.h"
+#include "quat.h"
+#include <inode.h>
 
 
-#include <impexp.h>
+//include c++ head files
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <map>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <map>
+#include <set>
+
 
 
 extern TCHAR *GetString(int id);

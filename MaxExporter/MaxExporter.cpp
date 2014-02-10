@@ -1,37 +1,27 @@
-//**************************************************************************/
-// Copyright (c) 1998-2007 Autodesk, Inc.
-// All rights reserved.
-// 
-// These coded instructions, statements, and computer programs contain
-// unpublished proprietary information written by Autodesk, Inc., and are
-// protected by Federal copyright law. They may not be disclosed to third
-// parties or copied or duplicated in any form, in whole or in part, without
-// the prior written consent of Autodesk, Inc.
-//**************************************************************************/
-// DESCRIPTION: Appwizard generated plugin
-// AUTHOR: 
-//***************************************************************************/
-
 #include "MaxExporter.h"
+#include "TreeEnumCall.h"
+
+
+
+
 
 #define MaxExporter_CLASS_ID	Class_ID(0x6f88c988, 0xa8fb641a)
 
 class MaxExporter : public SceneExport {
 public:
-	//Constructor/Destructor
 	MaxExporter();
 	~MaxExporter();
 
-	int				ExtCount();					// Number of extensions supported
-	const TCHAR *	Ext(int n);					// Extension #n (i.e. "3DS")
-	const TCHAR *	LongDesc();					// Long ASCII description (i.e. "Autodesk 3D Studio File")
-	const TCHAR *	ShortDesc();				// Short ASCII description (i.e. "3D Studio")
-	const TCHAR *	AuthorName();				// ASCII Author name
-	const TCHAR *	CopyrightMessage();			// ASCII Copyright message
-	const TCHAR *	OtherMessage1();			// Other message #1
-	const TCHAR *	OtherMessage2();			// Other message #2
-	unsigned int	Version();					// Version number * 100 (i.e. v3.01 = 301)
-	void			ShowAbout(HWND hWnd);		// Show DLL's "About..." box
+	int				ExtCount();	
+	const TCHAR *	Ext(int n);	
+	const TCHAR *	LongDesc();
+	const TCHAR *	ShortDesc();
+	const TCHAR *	AuthorName();
+	const TCHAR *	CopyrightMessage();
+	const TCHAR *	OtherMessage1();
+	const TCHAR *	OtherMessage2();
+	unsigned int	Version();
+	void			ShowAbout(HWND hWnd);
 
 	BOOL SupportsOptions(int ext, DWORD options);
 	int  DoExport(const TCHAR *name,ExpInterface *ei,Interface *i, BOOL suppressPrompts=FALSE, DWORD options=0);
@@ -43,14 +33,14 @@ class MaxExporterClassDesc : public ClassDesc2
 {
 public:
 	virtual int IsPublic() 							{ return TRUE; }
-	virtual void* Create(BOOL /*loading = FALSE*/) 		{ return new MaxExporter(); }
+	virtual void* Create(BOOL loading = FALSE) 		{ return new MaxExporter(); }
 	virtual const TCHAR *	ClassName() 			{ return GetString(IDS_CLASS_NAME); }
 	virtual SClass_ID SuperClassID() 				{ return SCENE_EXPORT_CLASS_ID; }
 	virtual Class_ID ClassID() 						{ return MaxExporter_CLASS_ID; }
 	virtual const TCHAR* Category() 				{ return GetString(IDS_CATEGORY); }
 
-	virtual const TCHAR* InternalName() 			{ return _T("MaxExporter"); }	// returns fixed parsable name (scripter-visible name)
-	virtual HINSTANCE HInstance() 					{ return hInstance; }					// returns owning module handle
+	virtual const TCHAR* InternalName() 			{ return _T("MaxExporter"); }
+	virtual HINSTANCE HInstance() 					{ return hInstance; }
 	
 
 };
@@ -60,9 +50,6 @@ ClassDesc2* GetMaxExporterDesc() {
 	static MaxExporterClassDesc MaxExporterDesc;
 	return &MaxExporterDesc; 
 }
-
-
-
 
 
 INT_PTR CALLBACK MaxExporterOptionsDlgProc(HWND hWnd,UINT message,WPARAM,LPARAM lParam) {
@@ -81,8 +68,6 @@ INT_PTR CALLBACK MaxExporterOptionsDlgProc(HWND hWnd,UINT message,WPARAM,LPARAM 
 	return 0;
 }
 
-
-//--- MaxExporter -------------------------------------------------------
 MaxExporter::MaxExporter()
 {
 
@@ -95,82 +80,73 @@ MaxExporter::~MaxExporter()
 
 int MaxExporter::ExtCount()
 {
-	#pragma message(TODO("Returns the number of file name extensions supported by the plug-in."))
 	return 1;
 }
 
 const TCHAR *MaxExporter::Ext(int /*i*/)
-{		
-	#pragma message(TODO("Return the 'i-th' file name extension (i.e. \"3DS\")."))
-	return _T("");
+{
+	return _T("mdl");
 }
 
 const TCHAR *MaxExporter::LongDesc()
 {
-	#pragma message(TODO("Return long ASCII description (i.e. \"Targa 2.0 Image File\")"))
 	return _T("");
 }
 	
 const TCHAR *MaxExporter::ShortDesc() 
-{			
-	#pragma message(TODO("Return short ASCII description (i.e. \"Targa\")"))
+{
 	return _T("");
 }
 
 const TCHAR *MaxExporter::AuthorName()
-{			
-	#pragma message(TODO("Return ASCII Author name"))
-	return _T("");
+{
+	return _T("ZhangGuofa");
 }
 
 const TCHAR *MaxExporter::CopyrightMessage() 
-{	
-	#pragma message(TODO("Return ASCII Copyright message"))
+{
 	return _T("");
 }
 
 const TCHAR *MaxExporter::OtherMessage1() 
-{		
-	//TODO: Return Other message #1 if any
+{
 	return _T("");
 }
 
 const TCHAR *MaxExporter::OtherMessage2() 
-{		
-	//TODO: Return other message #2 in any
+{
 	return _T("");
 }
 
 unsigned int MaxExporter::Version()
-{				
-	#pragma message(TODO("Return Version number * 100 (i.e. v3.01 = 301)"))
+{
 	return 100;
 }
 
-void MaxExporter::ShowAbout(HWND /*hWnd*/)
-{			
-	// Optional
+void MaxExporter::ShowAbout(HWND hWnd)
+{
+
 }
 
 BOOL MaxExporter::SupportsOptions(int /*ext*/, DWORD /*options*/)
 {
-	#pragma message(TODO("Decide which options to support.  Simply return true for each option supported by each Extension the exporter supports."))
 	return TRUE;
 }
 
-
-int	MaxExporter::DoExport(const TCHAR* /*name*/, ExpInterface* /*ei*/, Interface* /*ip*/, BOOL suppressPrompts, DWORD /*options*/)
+int	MaxExporter::DoExport(const TCHAR* name, ExpInterface* ei, Interface* ip, BOOL suppressPrompts, DWORD options)
 {
-	#pragma message(TODO("Implement the actual file Export here and"))
+	ExpInterface* pExpInterface = ei;
 
-	if(!suppressPrompts)
-		DialogBoxParam(hInstance, 
-				MAKEINTRESOURCE(IDD_PANEL), 
-				GetActiveWindow(), 
-				MaxExporterOptionsDlgProc, (LPARAM)this);
+	if(!suppressPrompts){
+		DialogBoxParam(hInstance,MAKEINTRESOURCE(IDD_PANEL),GetActiveWindow(),MaxExporterOptionsDlgProc, (LPARAM)this);
+	}
+	
+	CTreeEnumCall Enume;
 
-	#pragma message(TODO("return TRUE If the file is exported properly"))
-	return FALSE;
+	std::wstring filename(name);
+	Enume.SetFileName(filename);
+
+	pExpInterface->theScene->EnumTree( &Enume);
+
+	return TRUE;
 }
-
-

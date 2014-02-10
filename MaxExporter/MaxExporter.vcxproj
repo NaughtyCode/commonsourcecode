@@ -39,6 +39,7 @@
       <PreprocessorDefinitions>_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(MaxSdkInc);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4100;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>D:\Program Files\Autodesk\3ds Max 2014 SDK\lib;$(MaxSdkLib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -49,6 +50,7 @@
   <ItemGroup>
     <ClCompile Include="MaxExporter.cpp" />
     <ClCompile Include="DllEntry.cpp" />
+    <ClCompile Include="TreeEnumCall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MaxExporter.def" />
@@ -57,6 +59,7 @@
     <ClInclude Include="3dsmaxsdk_preinclude.h" />
     <ClInclude Include="MaxExporter.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="TreeEnumCall.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MaxExporter.rc" />

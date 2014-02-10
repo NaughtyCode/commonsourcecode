@@ -1,17 +1,3 @@
-//**************************************************************************/
-// Copyright (c) 1998-2007 Autodesk, Inc.
-// All rights reserved.
-// 
-// These coded instructions, statements, and computer programs contain
-// unpublished proprietary information written by Autodesk, Inc., and are
-// protected by Federal copyright law. They may not be disclosed to third
-// parties or copied or duplicated in any form, in whole or in part, without
-// the prior written consent of Autodesk, Inc.
-//**************************************************************************/
-// DESCRIPTION: Contains the Dll Entry stuff
-// AUTHOR: 
-//***************************************************************************/
-
 #include "MaxExporter.h"
 
 extern ClassDesc2* GetMaxExporterDesc();
@@ -75,7 +61,6 @@ __declspec( dllexport ) ULONG LibVersion()
 // on your DLL, and send you a message.
 __declspec( dllexport ) int LibInitialize(void)
 {
-	#pragma message(TODO("Perform initialization here."))
 	return TRUE;
 }
 
@@ -84,7 +69,6 @@ __declspec( dllexport ) int LibInitialize(void)
 // The system doesn't pay attention to a return value.
 __declspec( dllexport ) int LibShutdown(void)
 {
-	#pragma message(TODO("Perform un-initialization here."))
 	return TRUE;
 }
 
