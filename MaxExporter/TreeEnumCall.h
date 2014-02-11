@@ -15,9 +15,9 @@ public:
 	void SetFileName(const std::wstring& filename);
 	void CreateFileIOObject();
 private:
-	std::wstring  m_FileName;
-	std::ofstream m_FileObject;
-	Interface*    m_pInterface;
+	std::wstring   m_FileName;
+	std::wofstream m_FileObject;
+	Interface*     m_pInterface;
 };
 
 #endif

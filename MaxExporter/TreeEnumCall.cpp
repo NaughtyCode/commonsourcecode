@@ -12,15 +12,18 @@ CTreeEnumCall::~CTreeEnumCall()
 
 int CTreeEnumCall::callback(INode* node)
 {
-	this->CreateFileIOObject();
-	TimeValue time = m_pInterface->GetTime();
-	ObjectState state = node->EvalWorldState(time);
-	if (state.obj->SuperClassID()==GEOMOBJECT_CLASS_ID)
-	{
-		GeomObject* object;
-		object = (GeomObject*)state.obj;
-		const wchar_t* name=object->GetObjectName();
-		m_FileObject.write((char*)name,wcslen(name));
+	INode* root=m_pInterface->GetRootNode();
+	INode* Temp;
+	int num = root->NumberOfChildren();
+	int idx = num-1;
+	wchar_t* newline=L"\n";
+
+	while(idx>=0){
+		Temp=root->GetChildNode(idx);
+		const wchar_t* name=Temp->GetName();
+		m_FileObject.write(name,wcslen(name));
+		m_FileObject.write(newline,wcslen(newline));
+		--idx;
 	}
 
 

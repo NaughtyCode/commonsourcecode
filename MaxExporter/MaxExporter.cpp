@@ -83,7 +83,7 @@ int MaxExporter::ExtCount()
 	return 1;
 }
 
-const TCHAR *MaxExporter::Ext(int /*i*/)
+const TCHAR *MaxExporter::Ext(int i)
 {
 	return _T("mdl");
 }
@@ -128,7 +128,7 @@ void MaxExporter::ShowAbout(HWND hWnd)
 
 }
 
-BOOL MaxExporter::SupportsOptions(int /*ext*/, DWORD /*options*/)
+BOOL MaxExporter::SupportsOptions(int ext, DWORD options)
 {
 	return TRUE;
 }
@@ -146,17 +146,6 @@ int	MaxExporter::DoExport(const TCHAR* name, ExpInterface* ei, Interface* ip, BO
 	CTreeEnumCall Enume(filename,pInterface);
 
 	pExpInterface->theScene->EnumTree( &Enume);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
