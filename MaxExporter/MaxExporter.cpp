@@ -136,17 +136,41 @@ BOOL MaxExporter::SupportsOptions(int /*ext*/, DWORD /*options*/)
 int	MaxExporter::DoExport(const TCHAR* name, ExpInterface* ei, Interface* ip, BOOL suppressPrompts, DWORD options)
 {
 	ExpInterface* pExpInterface = ei;
+	Interface* pInterface = ip;
 
 	if(!suppressPrompts){
 		DialogBoxParam(hInstance,MAKEINTRESOURCE(IDD_PANEL),GetActiveWindow(),MaxExporterOptionsDlgProc, (LPARAM)this);
 	}
-	
-	CTreeEnumCall Enume;
 
 	std::wstring filename(name);
-	Enume.SetFileName(filename);
+	CTreeEnumCall Enume(filename,pInterface);
 
 	pExpInterface->theScene->EnumTree( &Enume);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	pInterface->PushPrompt(_M("导出模型成功"));
 	return TRUE;
 }

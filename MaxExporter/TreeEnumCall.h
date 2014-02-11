@@ -9,14 +9,15 @@ class ITreeEnumProc;
 class CTreeEnumCall:public ITreeEnumProc
 {
 public:
-	CTreeEnumCall();
+	CTreeEnumCall(const std::wstring& filename,Interface* ip);
 	~CTreeEnumCall();
 	virtual int callback(INode* node);
 	void SetFileName(const std::wstring& filename);
 	void CreateFileIOObject();
 private:
-	std::wstring m_FileName;
+	std::wstring  m_FileName;
 	std::ofstream m_FileObject;
+	Interface*    m_pInterface;
 };
 
 #endif
