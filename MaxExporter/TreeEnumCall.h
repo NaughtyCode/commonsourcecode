@@ -13,7 +13,6 @@ public:
 	~CTreeEnumCall();
 	virtual int callback(INode* node);
 	void SetFileName(const std::wstring& filename);
-	void CreateFileIOObject();
 private:
 	std::wstring   m_FileName;
 	std::wofstream m_FileObject;
