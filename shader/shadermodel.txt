@@ -1,0 +1,9 @@
+
+Direct3D support shader models
+
+Shader Model     Shader Profiles                                                    Direct3D support 
+Shader model 1   vs_1_1                                                             Direct3D 9 
+Shader model 2   ps_2_0, ps_2_x, vs_2_0, vs_2_x                                     Direct3D 9 
+Shader model 3   ps_3_0, vs_3_0                                                     Direct3D 9
+Shader model 4   gs_4_0, ps_4_0, vs_4_0, gs_4_1, ps_4_1, vs_4_1                     Direct3D 10 
+Shader model 5   cs_4_0, cs_4_1, cs_5_0, ds_5_0, gs_5_0, hs_5_0, ps_5_0, vs_5_0     Direct3D 11
