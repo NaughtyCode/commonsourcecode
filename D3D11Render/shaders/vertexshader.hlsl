@@ -1,9 +1,3 @@
-cbuffer cbPerObject : register( b0 )
-{
-	matrix		g_mWorldViewProjection	: packoffset( c0 );
-	matrix		g_mWorld				: packoffset( c4 );
-};
-
 struct VS_INPUT
 {
 	float4 vPosition : POSITION;
@@ -11,12 +5,10 @@ struct VS_INPUT
 
 struct VS_OUTPUT
 {
-	float3 vNormal : NORMAL;
+	float4 vNormal : SV_POSITION;
 };
 
-VS_OUTPUT VSMain( VS_INPUT Input )
+float4 VSMain( VS_INPUT Input ): SV_POSITION
 {
-	VS_OUTPUT Output;
-	Output.vNormal=Input.vPosition.xyz;
-	return Output;
+	return Input.vPosition;
 }

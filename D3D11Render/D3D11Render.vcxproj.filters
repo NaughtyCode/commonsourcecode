@@ -21,9 +21,6 @@
     <ClCompile Include="D3DDevice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D3DShaderDemo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -45,12 +42,15 @@
     <ClCompile Include="TViewPort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D3DRenderWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D3DDevice.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="D3DShaderDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
@@ -80,6 +80,9 @@
     <ClInclude Include="TViewPort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="D3DRenderWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="D3DShaderDemo.rc">
@@ -92,6 +95,12 @@
     </None>
     <None Include="shaders\vertexshader.hlsl">
       <Filter>shaders</Filter>
+    </None>
+    <None Include="D3DShaderDemo.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="small.ico">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
 </Project>

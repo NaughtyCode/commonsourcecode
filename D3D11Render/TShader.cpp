@@ -46,7 +46,6 @@ int TShader::CreateShaders(const WCHAR* VSFilename, const WCHAR* PSFilename, con
 		VSBlob->GetBufferSize(),
 		NULL,
 		&VertexShader);
-	DumpErrorInfo(hr);
 	if (FAILED(hr)){
 		return 0;
 	}
@@ -56,8 +55,6 @@ int TShader::CreateShaders(const WCHAR* VSFilename, const WCHAR* PSFilename, con
 		PSBlob->GetBufferSize(),
 		NULL,
 		&PixelShader);
-
-	DumpErrorInfo(hr);
 	if (FAILED(hr)){
 		return 0;
 	}

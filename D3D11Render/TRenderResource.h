@@ -6,7 +6,7 @@ class TD3DDevice;
 class TShader;
 
 struct Vertex{
-	FLOAT position[4];
+	XMFLOAT3 pos;
 };
 
 class TRenderResource
@@ -15,7 +15,6 @@ public:
 	TRenderResource(TD3DDevice* device, TShader * shader);
 	~TRenderResource();
 	int CreateRenderResource();
-	int CreateVertexBuffer();
 	void PostRenderResource();
 
 private:
@@ -23,5 +22,6 @@ private:
 	TShader * Shader;
 	ID3D11InputLayout* VertexLayout;
 	ID3D11Buffer* VertexBuffer;
+	UINT VertexBufferSize;
 };
 

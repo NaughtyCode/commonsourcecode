@@ -19,6 +19,7 @@
 #include <d3d11.h>
 #include <D3Dcompiler.h>
 #include <D3DX11async.h>
+#include <xnamath.h>
 
 void DumpErrorInfo(HRESULT hr);
 

@@ -10,6 +10,7 @@ public:
 	TRenderTarget(TD3DDevice* device);
 	virtual ~TRenderTarget();
 	int CreateRenderTarget();
+	void Clear();
 	ID3D11RenderTargetView* GetRenderTargetView();
 	void Release();
 private:

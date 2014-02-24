@@ -17,7 +17,7 @@ public:
 	TRender();
 	~TRender();
 	int CreateRender(HWND hWnd);
-	void RenderFrame(FLOAT* color=0);
+	void RenderFrame();
 	void Release();
 private:
 	TD3DDevice* Device;

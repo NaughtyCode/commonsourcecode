@@ -30,21 +30,12 @@ int TRender::CreateRender(HWND hWnd)
 	return 1;
 }
 
-void TRender::RenderFrame(FLOAT* color)
+void TRender::RenderFrame()
 {
-	if (!color){
-		float ClearColor[4] = { 0.3f, 0.3f, 0.8f, 1.0f };
-		Device->GetImmediateContext()->ClearRenderTargetView(RenderTarget->GetRenderTargetView(), ClearColor);
-		Device->GetSwapChain()->Present(0, 0);
-	}
-	else{
-		Device->GetImmediateContext()->ClearRenderTargetView(RenderTarget->GetRenderTargetView(), color);
-		Device->GetSwapChain()->Present(0, 0);
-	}
+	RenderTarget->Clear();
 	Resource->PostResource();
+	Device->GetSwapChain()->Present(0,0);
 }
-
-
 
 void TRender::Release()
 {

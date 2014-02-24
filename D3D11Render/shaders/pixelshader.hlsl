@@ -1,10 +1,7 @@
-struct PS_INPUT
-{
-	float3 vNormal		: NORMAL;
-};
 
-float4 PSMain( PS_INPUT Input ) : SV_TARGET
+
+
+float4 PSMain( float4 Pos : SV_POSITION ) : SV_Target
 {
-	float4 color = float4(0.35,0.35,0.6,1.0);
-	return color;
+	return float4(Pos.z,Pos.x/20,Pos.y/100,1.0);
 }

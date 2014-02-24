@@ -36,6 +36,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>.\Bin\</OutDir>
+    <TargetName>D3D11Render</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -74,7 +75,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="D3DDevice.cpp" />
-    <ClCompile Include="D3DShaderDemo.cpp" />
+    <ClCompile Include="D3DRenderWindow.cpp" />
+    <ClCompile Include="Data.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TRender.cpp" />
     <ClCompile Include="TRenderResource.cpp" />
@@ -85,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D3DDevice.h" />
-    <ClInclude Include="D3DShaderDemo.h" />
+    <ClInclude Include="D3DRenderWindow.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -100,8 +102,10 @@
     <ResourceCompile Include="D3DShaderDemo.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="D3DShaderDemo.ico" />
     <None Include="shaders\pixelshader.hlsl" />
     <None Include="shaders\vertexshader.hlsl" />
+    <None Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
