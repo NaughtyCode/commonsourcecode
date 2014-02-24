@@ -6,7 +6,7 @@ class TD3DDevice;
 class TShader;
 
 struct Vertex{
-	FLOAT position[3];
+	FLOAT position[4];
 };
 
 class TRenderResource

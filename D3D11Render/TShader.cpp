@@ -13,14 +13,12 @@ TShader::~TShader()
 int TShader::CompileShaderFromFile(const WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szShaderModel, ID3DBlob** ppBlobOut)
 {
 	HRESULT hr = S_OK;
-
 	DWORD dwShaderFlags = D3DCOMPILE_ENABLE_STRICTNESS;
 #if defined( DEBUG ) || defined( _DEBUG )
 	dwShaderFlags |= D3DCOMPILE_DEBUG;
 #endif
 	ID3DBlob* pError;
-	hr = D3DX11CompileFromFile(szFileName, NULL, NULL, szEntryPoint, szShaderModel,
-		dwShaderFlags, 0, NULL, ppBlobOut, &pError, NULL);
+	hr = D3DX11CompileFromFile(szFileName, NULL, NULL, szEntryPoint, szShaderModel,dwShaderFlags, 0, NULL, ppBlobOut, &pError, NULL);
 	if (FAILED(hr))
 	{
 		if (pError != NULL)
@@ -29,18 +27,16 @@ int TShader::CompileShaderFromFile(const WCHAR* szFileName, LPCSTR szEntryPoint,
 		return 0;
 	}
 	SAFE_RELEASE(pError);
-
 	return 1;
 }
 
 int TShader::CreateShaders(const WCHAR* VSFilename, const WCHAR* PSFilename, const char* szVertexShaderEntryPoint, const char* szPixelShaderEntryPoint)
 {
-	assert(Device);
-	if (FAILED(CompileShaderFromFile(VSFilename, szVertexShaderEntryPoint, "vs_5_0", &VSBlob))){
+	if (!CompileShaderFromFile(VSFilename, szVertexShaderEntryPoint, "vs_5_0", &VSBlob)){
 		return 0;
 	}
 
-	if (FAILED(CompileShaderFromFile(PSFilename, szPixelShaderEntryPoint, "ps_5_0", &PSBlob))){
+	if (!CompileShaderFromFile(PSFilename, szPixelShaderEntryPoint, "ps_5_0", &PSBlob)){
 		return 0;
 	}
 
@@ -50,20 +46,20 @@ int TShader::CreateShaders(const WCHAR* VSFilename, const WCHAR* PSFilename, con
 		VSBlob->GetBufferSize(),
 		NULL,
 		&VertexShader);
-
 	DumpErrorInfo(hr);
+	if (FAILED(hr)){
+		return 0;
+	}
 
 	hr = Device->GetDevice()->CreatePixelShader(
 		PSBlob->GetBufferPointer(),
 		PSBlob->GetBufferSize(),
 		NULL,
 		&PixelShader);
-	
-	DumpErrorInfo(hr);
 
-	if (FAILED(hr))
-	{
-		return 1;
+	DumpErrorInfo(hr);
+	if (FAILED(hr)){
+		return 0;
 	}
 
 	return 1;

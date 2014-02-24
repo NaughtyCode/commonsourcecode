@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{fd1ac6bc-22a6-47a6-a6e0-c375b74e79fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DDevice.cpp">
@@ -82,5 +85,13 @@
     <ResourceCompile Include="D3DShaderDemo.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\pixelshader.hlsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\vertexshader.hlsl">
+      <Filter>shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

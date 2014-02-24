@@ -99,6 +99,10 @@
   <ItemGroup>
     <ResourceCompile Include="D3DShaderDemo.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\pixelshader.hlsl" />
+    <None Include="shaders\vertexshader.hlsl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

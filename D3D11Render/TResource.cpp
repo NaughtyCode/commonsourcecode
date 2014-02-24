@@ -14,7 +14,7 @@ int TResource::CreateResource()
 	int rt;
 	Shader = new TShader(Device);
 	assert(Shader);
-	rt = Shader->CreateShaders(L"vertexshader.hlsl", L"pixelshader.hlsl", "VSMain", "PSMain");
+	rt = Shader->CreateShaders(L"..\\shaders\\vertexshader.hlsl", L"..\\shaders\\pixelshader.hlsl", "VSMain", "PSMain");
 	assert(rt);
 	RenderResource = new TRenderResource(Device,Shader);
 	assert(RenderResource);
@@ -27,4 +27,9 @@ void TResource::PostResource()
 {
 	Shader->PostShaders();
 	RenderResource->PostRenderResource();
+}
+
+void TResource::Release()
+{
+
 }

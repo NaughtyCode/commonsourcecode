@@ -15,7 +15,7 @@ public:
 	~TResource();
 	int CreateResource();
 	void PostResource();
-
+	void Release();
 private:
 	TD3DDevice* Device;
 	TShader* Shader;
