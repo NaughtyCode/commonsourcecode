@@ -1,4 +1,1 @@
-MiscCode
-========
-
-Some misc source code.
+miscellaneous code.
